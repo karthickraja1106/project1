@@ -1,0 +1,346 @@
+:root {
+       /* (sub-heading at the top of the app UI) */
+       --PaleViolet: hsl(276, 100%, 81%);
+       /* (chat on the left) */
+       --ModerateViolet: hsl(276, 55%, 52%);
+       /* (chat on the right) */
+       --DarkViolet: hsl(271, 15%, 43%);
+       /* (placeholder text) */
+       --GrayishBlue: hsl(206, 6%, 79%);
+       /* (main heading) */
+       --VeryDarkViolet: hsl(271, 36%, 24%);
+       /* (paragraph) */
+       --GrayishViolet: hsl(270, 7%, 64%);
+
+       /* background gradients */
+
+       --LightMagenta: hsl(293, 100%, 63%);
+       --LightViolet: hsl(264, 100%, 61%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: 'Open Sans', sans-serif;
+}
+
+body {
+       background-color: #f5f3ff;
+       min-height: 100vh;
+       max-width: 100vw;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 20px;
+       position: relative;
+       overflow-x: hidden;
+}
+
+.purplecircle{
+       width: 500px;
+       height: 600px;
+       border-bottom-left-radius: 50%;
+       border-bottom-right-radius: 50%;
+       position: absolute;
+       background: linear-gradient(to bottom, var(--LightMagenta), var(--LightViolet));
+       top: 0;
+       left: -100px;
+       z-index: -100;
+       position: fixed;
+}
+
+.graycircle{
+       bottom: 0;
+       right: -100px;
+       position: absolute;
+       background-color: hsla(293, 100%, 63%, 0.197);
+       width: 500px;
+       height: 600px;
+       border-top-left-radius: 50%;
+}
+.container{
+       display: flex;
+       width: 960px;
+       justify-content: center;
+       align-items: center;
+       margin: 0 auto;
+}
+.container .chatsection{
+       flex: 1;
+       height: 600px;
+       background-color: white;
+       border: 7px solid rgba(255, 255, 255, 0.832);
+       display: flex;
+       flex-direction: column;
+       overflow-y: scroll;
+       position: relative;
+       cursor: pointer;
+       
+}
+.chatsection::-webkit-scrollbar{
+       width: 3px;
+}
+.chatsection::-webkit-scrollbar-track{
+       background-color: #d5cdf85f;
+}
+.chatsection::-webkit-scrollbar-thumb{
+       background-color: darkgrey;
+       border-radius: 5px; 
+       border: 3px solid transparent; 
+       background-clip: content-box;
+}
+.container .chatsection .chatheader{
+       width: 100%;
+       height: 90px;
+       background: linear-gradient(to left, var(--LightMagenta), var(--LightViolet));
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 15px;
+       position: sticky;
+       top: 0;
+       z-index: 100;
+} 
+.chatheader .left{
+       display: flex;
+       align-items: center;
+}
+.chatheader .backbtn{
+       margin-right: 10px;
+       font-size: 18px;
+       color: rgba(255, 255, 255, 0.518);
+       font-weight: bold;
+}
+.profile-pitcure img{
+       width: 35px;
+       height: 35px;
+       border: 2px solid white;
+       border-radius: 50%;
+       margin-right: 10px;
+}
+.chatheader .profile-info h3{
+       font-size: 18px;
+       color: var(--PaleViolet);
+       margin-bottom: 8px;
+}
+.chatheader .profile-info p{
+       font-size: 14px;
+       color:var(--PaleViolet);
+       text-align: left;
+}
+.right{
+       display: flex;
+       flex-direction: column;
+       margin-right: 4px;
+}
+.right .dot{
+       width: 4.5px;
+       height: 4.5px;
+       background-color:var(--PaleViolet);
+       border-radius: 50%;
+       margin-bottom: 3px;
+}
+.left-chat{
+       width: 75%;
+       padding: 10px 13px 0;
+}
+.left-chat p{
+       margin-bottom: 6px;
+       color: var(--ModerateViolet);
+       font-size: 14px;
+       background-color:hsla(276, 85%, 64%, 0.317);
+       padding: 13px; 
+       border-radius: 15px;
+}
+.right-chat{
+      
+       display: flex;
+       flex-direction: column;
+       align-self: flex-end;
+       padding-right: 13px;
+       margin-top: 7px;
+       
+       
+}
+.imgebox{
+       align-self: flex-end;
+       margin-bottom: 7px;
+}
+.imgebox img{
+       width: 70px;
+       height: 70px;
+       border-radius: 15px;
+}
+.right-chat p{
+       align-self: flex-end;
+       width: 75%;
+       background-color:rgba(234, 226, 226, 0.898);
+       color: var(--DarkViolet);
+       margin-bottom: 7px;
+       padding: 13px;
+       border-radius: 15px;
+}
+.left-chat2{
+       width: 75%;
+       padding: 10px 13px 0;
+}
+.left-chat2 p{
+       margin-bottom: 6px;
+       color: var(--ModerateViolet);
+       font-size: 14px;
+       padding: 13px; 
+       border-radius: 15px;
+
+}
+.left-chat2 .one{
+       background-color:hsla(276, 85%, 64%, 0.317);
+}
+.pricechat1{
+       display: flex;
+       justify-content: space-between;
+       background: linear-gradient(to left, var(--LightMagenta), var(--LightViolet));
+       margin-bottom: 7px;
+       border-radius: 15px;
+}
+.pricechat1 p{
+       color: white;
+}
+.amnt{
+       font-size: 16px;
+       font-weight: bold;
+}
+.inputboxt{
+       width: 100%;
+       padding: 15px;
+}
+.inputboxt .inpt{
+       display: flex;
+       position: relative;
+}
+.inputboxt .inpt input{
+       width: 100%;
+       height: 40px;
+       padding: 13px 18px;
+       font-size: 18px;
+       border-radius: 15px;
+       border: none;
+       outline: none;
+       position: relative;
+}
+.inpt button{
+       position: absolute;
+       font-size: 20px;
+       max-width: 50px;
+       height: 100%;
+       right: 0;
+       top: 0;
+       border: none;
+       outline: none;
+       padding: 8px;
+       background-color: black;
+       color: white;
+       border-radius: 50%;
+       cursor: pointer;
+       text-align: center;
+       
+}
+.inpt button i{
+       transform: rotate(180deg);
+       
+}
+input::placeholder{
+       padding-left: 13px;
+       font-size: 14px;
+}
+.content{
+       flex: 1;
+       margin-left: 30px;
+}
+.content h1{
+       font-weight: bold;
+       padding: 10px 15px;
+       color: var(--VeryDarkViolet);
+}
+.content p{
+       padding:5px 15px;
+       line-height: 1.5;
+       font-size: 16px;
+       text-align: justify;
+       color: var(--GrayishViolet);
+}
+@media screen and (max-width: 768px){
+       .container{
+              flex-direction: column;
+       }
+       .chatsection{
+              width: 500px;
+       }
+       .content{
+              width: 480px;
+              margin-top: 20px;
+       }
+       .content h1{
+              text-align: center;
+       }
+       .content p{
+              color: #333;
+              line-height: 1.8;
+       }
+       .graycircle{
+              background-color: transparent;
+       }
+       .purplecircle{
+              top: -100px;
+       }
+}
+@media screen and (max-width: 530px){
+       body{
+              overflow-x: hidden;
+       }
+       .chatsection{
+              width: 360px;
+              justify-content: center;
+              margin: 0 auto;
+       }
+       .content{
+              width: 360px;
+              margin-right: 20px;
+             
+       }
+       .content p{
+              text-align: center;
+       }
+       .container{
+              justify-content: center;
+       }
+
+}
+@media screen and (max-width: 370px){
+       .chatsection{
+              width: 360px;
+              margin-left: 20px;
+              
+       }
+       .content{
+              width: 360px;
+              padding: 13px;
+              margin: 0 auto;
+       }
+       .content h3{
+              font-size: 34px;
+       }
+       
+}
+
+
+
+
+
+
+
+
+
+
